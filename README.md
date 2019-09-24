@@ -1,6 +1,6 @@
 # Storybook React
 
-## [Страница Storybook](https://neyasbltb88.github.io/Storybook-react/storybook-static/index.html)
+## [Страница Storybook](https://neyasbltb88.github.io/Storybook-react/)
 
 ### Компоненты:
-- Btn ([ссылка](https://neyasbltb88.github.io/Storybook-react/storybook-static/index.html?path=/story/btn--basic))
+- Btn ([ссылка](https://neyasbltb88.github.io/Storybook-react/?path=/story/btn--basic))
