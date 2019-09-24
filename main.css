@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+}
+
+.Background {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: var(--color);
+}
+[class*=Btn] {
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+[class*=Btn-dense] {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.7rem;
+}
+
+[class*=Btn]:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--primary);
+    opacity: .1;
+    z-index: -1;
+    -webkit-transform: translate3d(0, -100%, 1px);
+            transform: translate3d(0, -100%, 1px);
+    -webkit-transition: -webkit-transform 200ms ease;
+    transition: -webkit-transform 200ms ease;
+    transition: transform 200ms ease;
+    transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+[class*=Btn]:not(:disabled):hover,
+[class*=Btn]:not(:disabled):focus {
+    cursor: pointer;
+    box-shadow: 0 0 20px -8px var(--primary);
+    outline: none;
+}
+
+[class*=Btn]:not(:disabled):hover:after,
+[class*=Btn]:not(:disabled):active:after {
+    -webkit-transform: translate3d(0, 0, 1px);
+            transform: translate3d(0, 0, 1px);
+}
+
+[class*=Btn]:disabled {
+    opacity: .5;
+}
+
+/*# sourceMappingURL=main.css.map*/
