@@ -1,4 +1,4 @@
-# Storubook React
+# Storybook React
 
 ## [Страница Storybook](https://neyasbltb88.github.io/Storybook-react/storybook-static/index.html)
 
