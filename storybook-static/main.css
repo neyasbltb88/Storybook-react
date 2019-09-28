@@ -9,6 +9,7 @@ body {
     background-color: var(--color);
 }
 [class*=Btn] {
+    --duration: 300ms;
     background-color: var(--secondary);
     color: var(--primary);
     border: 2px solid var(--primary);
@@ -39,14 +40,14 @@ body {
     left: 0;
     top: 0;
     background-color: var(--primary);
-    opacity: .1;
+    opacity: .15;
     z-index: -1;
     -webkit-transform: translate3d(0, -100%, 1px);
             transform: translate3d(0, -100%, 1px);
-    -webkit-transition: -webkit-transform 200ms ease;
-    transition: -webkit-transform 200ms ease;
-    transition: transform 200ms ease;
-    transition: transform 200ms ease, -webkit-transform 200ms ease;
+    -webkit-transition: -webkit-transform var(--duration) ease;
+    transition: -webkit-transform var(--duration) ease;
+    transition: transform var(--duration) ease;
+    transition: transform var(--duration) ease, -webkit-transform var(--duration) ease;
 }
 
 [class*=Btn]:not(:disabled):hover,
@@ -64,6 +65,239 @@ body {
 
 [class*=Btn]:disabled {
     opacity: .5;
+}
+
+/* Mouse Detect */
+[class*=Btn][data-mouse-detect=true]:after {
+    -webkit-transition: -webkit-transform 0ms;
+    transition: -webkit-transform 0ms;
+    transition: transform 0ms;
+    transition: transform 0ms, -webkit-transform 0ms;
+}
+
+[class*=Btn][class*=mouseleave-][data-mouse-detect=true]:active:after {
+    -webkit-animation: mouseenter-top var(--duration) ease forwards;
+            animation: mouseenter-top var(--duration) ease forwards;
+}
+
+/* top */
+[class*=Btn][data-mouse-detect=true].mouseenter-top:after {
+    -webkit-animation: mouseenter-top var(--duration) ease forwards;
+            animation: mouseenter-top var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-top:after {
+    -webkit-animation: mouseleave-top var(--duration) ease forwards;
+            animation: mouseleave-top var(--duration) ease forwards;
+}
+
+@-webkit-keyframes mouseenter-top {
+    from {
+        -webkit-transform: translate3d(0, -100%, 1px);
+                transform: translate3d(0, -100%, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseenter-top {
+    from {
+        -webkit-transform: translate3d(0, -100%, 1px);
+                transform: translate3d(0, -100%, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@-webkit-keyframes mouseleave-top {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, -100%, 1px);
+                transform: translate3d(0, -100%, 1px);
+    }
+}
+
+@keyframes mouseleave-top {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, -100%, 1px);
+                transform: translate3d(0, -100%, 1px);
+    }
+}
+
+/* bottom */
+[class*=Btn][data-mouse-detect=true].mouseenter-bottom:after {
+    -webkit-animation: mouseenter-bottom var(--duration) ease forwards;
+            animation: mouseenter-bottom var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-bottom:after {
+    -webkit-animation: mouseleave-bottom var(--duration) ease forwards;
+            animation: mouseleave-bottom var(--duration) ease forwards;
+}
+
+@-webkit-keyframes mouseenter-bottom {
+    from {
+        -webkit-transform: translate3d(0, 100%, 1px);
+                transform: translate3d(0, 100%, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseenter-bottom {
+    from {
+        -webkit-transform: translate3d(0, 100%, 1px);
+                transform: translate3d(0, 100%, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@-webkit-keyframes mouseleave-bottom {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 100%, 1px);
+                transform: translate3d(0, 100%, 1px);
+    }
+}
+
+@keyframes mouseleave-bottom {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 100%, 1px);
+                transform: translate3d(0, 100%, 1px);
+    }
+}
+
+/* Left */
+[class*=Btn][data-mouse-detect=true].mouseenter-left:after {
+    -webkit-animation: mouseenter-left var(--duration) ease forwards;
+            animation: mouseenter-left var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-left:after {
+    -webkit-animation: mouseleave-left var(--duration) ease forwards;
+            animation: mouseleave-left var(--duration) ease forwards;
+}
+
+@-webkit-keyframes mouseenter-left {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 1px);
+                transform: translate3d(-100%, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseenter-left {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 1px);
+                transform: translate3d(-100%, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@-webkit-keyframes mouseleave-left {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(-100%, 0, 1px);
+                transform: translate3d(-100%, 0, 1px);
+    }
+}
+
+@keyframes mouseleave-left {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(-100%, 0, 1px);
+                transform: translate3d(-100%, 0, 1px);
+    }
+}
+
+/* Right */
+[class*=Btn][data-mouse-detect=true].mouseenter-right:after {
+    -webkit-animation: mouseenter-right var(--duration) ease forwards;
+            animation: mouseenter-right var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-right:after {
+    -webkit-animation: mouseleave-right var(--duration) ease forwards;
+            animation: mouseleave-right var(--duration) ease forwards;
+}
+
+@-webkit-keyframes mouseenter-right {
+    from {
+        -webkit-transform: translate3d(100%, 0, 1px);
+                transform: translate3d(100%, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseenter-right {
+    from {
+        -webkit-transform: translate3d(100%, 0, 1px);
+                transform: translate3d(100%, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+}
+
+@-webkit-keyframes mouseleave-right {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(100%, 0, 1px);
+                transform: translate3d(100%, 0, 1px);
+    }
+}
+
+@keyframes mouseleave-right {
+    from {
+        -webkit-transform: translate3d(0, 0, 1px);
+                transform: translate3d(0, 0, 1px);
+    }
+    to {
+        -webkit-transform: translate3d(100%, 0, 1px);
+                transform: translate3d(100%, 0, 1px);
+    }
 }
 
 /*# sourceMappingURL=main.css.map*/

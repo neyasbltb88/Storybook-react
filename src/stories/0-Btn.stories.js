@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import Background from '../components/Background';
-import Btn from '../components/Btn'
+import Btn, { BtnMouseDetect } from '../components/Btn'
 
 export default {
     title: 'Btn',
@@ -71,4 +71,14 @@ export const Children = () => (
 
 Children.story = {
     name: 'Children + Label',
+};
+
+export const MouseDetect = () => (
+    <Background center>
+        <BtnMouseDetect onClick={action('clicked')} label="Hello Button" />
+    </Background>
+);
+
+MouseDetect.story = {
+    name: 'Mouse Detect',
 };

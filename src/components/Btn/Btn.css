@@ -1,4 +1,5 @@
 [class*=Btn] {
+    --duration: 300ms;
     background-color: var(--secondary);
     color: var(--primary);
     border: 2px solid var(--primary);
@@ -26,10 +27,10 @@
     left: 0;
     top: 0;
     background-color: var(--primary);
-    opacity: .1;
+    opacity: .15;
     z-index: -1;
     transform: translate3d(0, -100%, 1px);
-    transition: transform 200ms ease;
+    transition: transform var(--duration) ease;
 }
 
 [class*=Btn]:not(:disabled):hover,
@@ -46,4 +47,121 @@
 
 [class*=Btn]:disabled {
     opacity: .5;
+}
+
+/* Mouse Detect */
+[class*=Btn][data-mouse-detect=true]:after {
+    transition: transform 0ms;
+}
+
+[class*=Btn][class*=mouseleave-][data-mouse-detect=true]:active:after {
+    animation: mouseenter-top var(--duration) ease forwards;
+}
+
+/* top */
+[class*=Btn][data-mouse-detect=true].mouseenter-top:after {
+    animation: mouseenter-top var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-top:after {
+    animation: mouseleave-top var(--duration) ease forwards;
+}
+
+@keyframes mouseenter-top {
+    from {
+        transform: translate3d(0, -100%, 1px);
+    }
+    to {
+        transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseleave-top {
+    from {
+        transform: translate3d(0, 0, 1px);
+    }
+    to {
+        transform: translate3d(0, -100%, 1px);
+    }
+}
+
+/* bottom */
+[class*=Btn][data-mouse-detect=true].mouseenter-bottom:after {
+    animation: mouseenter-bottom var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-bottom:after {
+    animation: mouseleave-bottom var(--duration) ease forwards;
+}
+
+@keyframes mouseenter-bottom {
+    from {
+        transform: translate3d(0, 100%, 1px);
+    }
+    to {
+        transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseleave-bottom {
+    from {
+        transform: translate3d(0, 0, 1px);
+    }
+    to {
+        transform: translate3d(0, 100%, 1px);
+    }
+}
+
+/* Left */
+[class*=Btn][data-mouse-detect=true].mouseenter-left:after {
+    animation: mouseenter-left var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-left:after {
+    animation: mouseleave-left var(--duration) ease forwards;
+}
+
+@keyframes mouseenter-left {
+    from {
+        transform: translate3d(-100%, 0, 1px);
+    }
+    to {
+        transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseleave-left {
+    from {
+        transform: translate3d(0, 0, 1px);
+    }
+    to {
+        transform: translate3d(-100%, 0, 1px);
+    }
+}
+
+/* Right */
+[class*=Btn][data-mouse-detect=true].mouseenter-right:after {
+    animation: mouseenter-right var(--duration) ease forwards;
+}
+
+[class*=Btn][data-mouse-detect=true].mouseleave-right:after {
+    animation: mouseleave-right var(--duration) ease forwards;
+}
+
+@keyframes mouseenter-right {
+    from {
+        transform: translate3d(100%, 0, 1px);
+    }
+    to {
+        transform: translate3d(0, 0, 1px);
+    }
+}
+
+@keyframes mouseleave-right {
+    from {
+        transform: translate3d(0, 0, 1px);
+    }
+    to {
+        transform: translate3d(100%, 0, 1px);
+    }
 }
