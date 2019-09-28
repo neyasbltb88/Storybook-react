@@ -76,19 +76,19 @@ body {
 }
 
 [class*=Btn][class*=mouseleave-][data-mouse-detect=true]:active:after {
-    -webkit-animation: mouseenter-top var(--duration) forwards;
-            animation: mouseenter-top var(--duration) forwards;
+    -webkit-animation: mouseenter-top var(--duration) ease forwards;
+            animation: mouseenter-top var(--duration) ease forwards;
 }
 
 /* top */
 [class*=Btn][data-mouse-detect=true].mouseenter-top:after {
-    -webkit-animation: mouseenter-top var(--duration) forwards;
-            animation: mouseenter-top var(--duration) forwards;
+    -webkit-animation: mouseenter-top var(--duration) ease forwards;
+            animation: mouseenter-top var(--duration) ease forwards;
 }
 
 [class*=Btn][data-mouse-detect=true].mouseleave-top:after {
-    -webkit-animation: mouseleave-top var(--duration) forwards;
-            animation: mouseleave-top var(--duration) forwards;
+    -webkit-animation: mouseleave-top var(--duration) ease forwards;
+            animation: mouseleave-top var(--duration) ease forwards;
 }
 
 @-webkit-keyframes mouseenter-top {
@@ -137,13 +137,13 @@ body {
 
 /* bottom */
 [class*=Btn][data-mouse-detect=true].mouseenter-bottom:after {
-    -webkit-animation: mouseenter-bottom var(--duration) forwards;
-            animation: mouseenter-bottom var(--duration) forwards;
+    -webkit-animation: mouseenter-bottom var(--duration) ease forwards;
+            animation: mouseenter-bottom var(--duration) ease forwards;
 }
 
 [class*=Btn][data-mouse-detect=true].mouseleave-bottom:after {
-    -webkit-animation: mouseleave-bottom var(--duration) forwards;
-            animation: mouseleave-bottom var(--duration) forwards;
+    -webkit-animation: mouseleave-bottom var(--duration) ease forwards;
+            animation: mouseleave-bottom var(--duration) ease forwards;
 }
 
 @-webkit-keyframes mouseenter-bottom {
@@ -192,13 +192,13 @@ body {
 
 /* Left */
 [class*=Btn][data-mouse-detect=true].mouseenter-left:after {
-    -webkit-animation: mouseenter-left var(--duration) forwards;
-            animation: mouseenter-left var(--duration) forwards;
+    -webkit-animation: mouseenter-left var(--duration) ease forwards;
+            animation: mouseenter-left var(--duration) ease forwards;
 }
 
 [class*=Btn][data-mouse-detect=true].mouseleave-left:after {
-    -webkit-animation: mouseleave-left var(--duration) forwards;
-            animation: mouseleave-left var(--duration) forwards;
+    -webkit-animation: mouseleave-left var(--duration) ease forwards;
+            animation: mouseleave-left var(--duration) ease forwards;
 }
 
 @-webkit-keyframes mouseenter-left {
@@ -247,13 +247,13 @@ body {
 
 /* Right */
 [class*=Btn][data-mouse-detect=true].mouseenter-right:after {
-    -webkit-animation: mouseenter-right var(--duration) forwards;
-            animation: mouseenter-right var(--duration) forwards;
+    -webkit-animation: mouseenter-right var(--duration) ease forwards;
+            animation: mouseenter-right var(--duration) ease forwards;
 }
 
 [class*=Btn][data-mouse-detect=true].mouseleave-right:after {
-    -webkit-animation: mouseleave-right var(--duration) forwards;
-            animation: mouseleave-right var(--duration) forwards;
+    -webkit-animation: mouseleave-right var(--duration) ease forwards;
+            animation: mouseleave-right var(--duration) ease forwards;
 }
 
 @-webkit-keyframes mouseenter-right {
