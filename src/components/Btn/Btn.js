@@ -25,8 +25,7 @@ const Btn = forwardRef(function Btn(props, ref) {
         }
     }    
 
-    // return <button ref={ref} style={style} className={_className} onClick={onClick} disabled={disabled} title={title} data-mouse-detect={withMouseDetect} {...rest} >{content}</button>
-    return <button ref={ref} style={style} className={_className} onClick={onClick} disabled={disabled} title={title} {...rest} >{content}</button>
+    return <button ref={ref} style={style} className={_className} onClick={onClick} disabled={disabled} title={title} data-mouse-detect={withMouseDetect} {...rest} >{content}</button>
 });
 
 export default Btn;

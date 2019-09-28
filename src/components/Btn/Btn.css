@@ -17,6 +17,9 @@
 [class*=Btn-dense] {
     padding: 0.5rem 0.7rem;
     font-size: 0.7rem;
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+    font-weight: normal;
 }
 
 [class*=Btn]:after {
