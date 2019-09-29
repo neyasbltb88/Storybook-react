@@ -2,10 +2,10 @@ import React, { forwardRef } from 'react';
 import './Btn.css';
 
 const Btn = forwardRef(function Btn(props, ref) {
-    const { onClick, label, disabled, dense, invert, children, color, background, className = '', mouseDetect = false, ...rest } = props;
+    const { onClick, label, disabled, dense, icon, invert, children, color, background, className = '', mouseDetect = false, ...rest } = props;
     let content = children ? children : label;
     let title = (children && label) ? label : '';
-    let _className = `Btn${dense ? ' Btn-dense' : ''}${invert ? ' Btn-invert' : ''} ${className}`.trim();
+    let _className = `Btn${dense ? ' Btn-dense' : ''}${icon ? ' Btn-icon' : ''}${invert ? ' Btn-invert' : ''} ${className}`.trim();
     let _primary = '#61DAFB';
     let _secondary = background || 'transparent';
 
@@ -20,7 +20,7 @@ const Btn = forwardRef(function Btn(props, ref) {
     let withMouseDetect = (mouseDetect !== false) ? true : false;
     if(withMouseDetect) {
         let { type, side } = mouseDetect;
-        if(type, side) {
+        if(type && side) {
             _className = _className + ` ${type}-${side}`;
         }
     }    

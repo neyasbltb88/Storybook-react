@@ -1,9 +1,12 @@
 [class*=Btn] {
     --duration: 300ms;
+    --padding: 1rem;
+    --paddingY: var(--padding);
+    --paddingX: calc(var(--paddingY) * 1.5);
     background-color: var(--secondary);
     color: var(--primary);
     border: 2px solid var(--primary);
-    padding: 1rem 1.5rem;
+    padding: var(--paddingY) var(--paddingX);
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: bold;
@@ -12,14 +15,20 @@
     position: relative;
     overflow: hidden;
     z-index: 0;
+    display: flex;
 }
 
 [class*=Btn-dense] {
-    padding: 0.5rem 0.7rem;
+    --padding: 0.5rem;
     font-size: 0.7rem;
     border: 1px solid var(--primary);
     border-radius: 3px;
     font-weight: normal;
+}
+
+[class*=Btn-icon] {
+    --paddingY: calc(var(--padding) / 1.2);
+    --paddingX: var(--paddingY);
 }
 
 [class*=Btn]:after {

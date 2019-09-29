@@ -50,14 +50,14 @@ Invert.story = {
 
 export const Icon = () => (
     <Background center>
-        <Btn onClick={action('clicked')} dense >
-            <img src="./img/Btn/react-logo.svg" alt="react-logo" width="42"/>
+        <Btn onClick={action('clicked')} dense icon>
+            <img src="./img/Btn/react-logo.svg" alt="react-logo" width="32" height="32"/>
         </Btn>
     </Background>
 );
 
 Icon.story = {
-    name: 'Icon',
+    name: 'Icon Dense',
 };
 
 export const Children = () => (
