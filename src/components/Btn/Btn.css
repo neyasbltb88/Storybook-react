@@ -16,6 +16,7 @@
     overflow: hidden;
     z-index: 0;
     display: flex;
+    transition: box-shadow calc(var(--duration) / 1.5) ease;
 }
 
 [class*=Btn-dense] {
