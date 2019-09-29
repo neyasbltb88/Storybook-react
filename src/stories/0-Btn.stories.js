@@ -18,6 +18,16 @@ Basic.story = {
     name: 'Basic',
 };
 
+export const Disabled = () => (
+    <Background center>
+        <Btn onClick={action('clicked')} label="Hello Button" disabled={true} />
+    </Background>
+);
+
+Disabled.story = {
+    name: 'Disabled',
+};
+
 export const Dense = () => (
     <Background center>
         <Btn onClick={action('clicked')} label="Hello Button" dense />
