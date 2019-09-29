@@ -62,8 +62,8 @@ Icon.story = {
 
 export const Children = () => (
     <Background center>
-        <Btn onClick={action('clicked')} label="Hello Button" >
-            <img src="./img/Btn/react-logo.svg" alt="react-logo"/>
+        <Btn onClick={action('clicked')} label="Hello Button" style={{ flexDirection: 'column', alignItems: 'center' }} >
+            <img src="./img/Btn/react-logo.svg" alt="react-logo" width="100" style={{ marginBottom: '15px' }}/>
             Children Text
         </Btn>
     </Background>
