@@ -1,18 +1,10 @@
-import React, { Component, createRef } from 'react';
+import React, { useState } from 'react';
 
 const MouseDetect = (Comp) => {
-    return class MouseDetect extends Component {
-        constructor(props) {
-            super(props);
-            this.comp = createRef();
+    const MouseDetect = (props) => {
+        const [ state, setState ] = useState({ type: null, side: null });
 
-            this.state = {
-                type: null,
-                side: null
-            }
-        }
-
-        detectSide(mouse, elem) {
+        const detectSide = (mouse, elem) => {
             let minDistance = Infinity;
             let side = null;
 
@@ -29,13 +21,10 @@ const MouseDetect = (Comp) => {
             return side;
         }
 
-        onMouse = ({ pageX, pageY, target, type}) => {
+        const onMouse = ({ pageX, pageY, target, type }) => {
             let { offsetLeft, offsetTop, offsetWidth, offsetHeight } = target;
-
-            let side = this.detectSide({
-                x: pageX,
-                y: pageY
-            }, {
+            let mouse = { x: pageX, y: pageY };
+            let elem = {
                 x: {
                     left: offsetLeft,
                     right: offsetLeft + offsetWidth
@@ -44,25 +33,17 @@ const MouseDetect = (Comp) => {
                     top: offsetTop,
                     bottom: offsetTop + offsetHeight
                 }
-            });
+            };
+            let side = detectSide(mouse, elem);
 
-            this.setState({
-                type,
-                side
-            });
+            setState({ type, side });
         }
 
-        componentDidMount() {
-            let comp = this.comp.current;
-            comp.addEventListener('mouseenter', this.onMouse);
-            comp.addEventListener('mouseleave', this.onMouse);
-        }
-
-        render() {
-            const props = { ...this.props, 'data-mouse-detect': true };
-            return <Comp ref={ this.comp } mouseDetect={this.state} { ...props }/>
-        }
+        props = { ...props, 'data-mouse-detect': true };
+        return <Comp onMouseEnter={onMouse} onMouseLeave={onMouse} mouseDetect={state} { ...props }/>
     }
+
+    return MouseDetect;
 }
 
 export default MouseDetect;

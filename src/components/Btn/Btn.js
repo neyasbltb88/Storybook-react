@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import './Btn.css';
 
-const Btn = forwardRef(function Btn(props, ref) {
+const Btn = (props) => {
     const { onClick, label, disabled, dense, icon, invert, children, color, background, className = '', style = {}, mouseDetect = false, ...rest } = props;
     let content = children ? children : label;
     let title = (children && label) ? label : '';
@@ -26,7 +26,7 @@ const Btn = forwardRef(function Btn(props, ref) {
         }
     }    
 
-    return <button ref={ref} style={btnStyle} className={_className} onClick={onClick} disabled={disabled} title={title} data-mouse-detect={withMouseDetect} {...rest} >{content}</button>
-});
+    return <button style={btnStyle} className={_className} onClick={onClick} disabled={disabled} title={title} data-mouse-detect={withMouseDetect} {...rest} >{content}</button>
+}
 
 export default Btn;
